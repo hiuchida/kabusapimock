@@ -53,7 +53,7 @@ public class MarginApiController implements MarginApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<MarginPremiumResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"9433\",\n  \"GeneralMargin\" : { },\n  \"DayTrade\" : {\n    \"MarginPremiumType\" : 2,\n    \"MarginPremium\" : 0.55,\n    \"UpperMarginPremium\" : 1,\n    \"LowerMarginPremium\" : 0.3,\n    \"TickMarginPremium\" : 0.01\n  }\n}", MarginPremiumResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<MarginPremiumResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"9433\",\n  \"GeneralMargin\" : { },\n  \"DayTrade\" : {\n    \"MarginPremiumType\" : 2,\n    \"MarginPremium\" : 0.55,\n    \"UpperMarginPremium\" : 1,\n    \"LowerMarginPremium\" : 0.3,\n    \"TickMarginPremium\" : 0.01\n  }\n}", MarginPremiumResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<MarginPremiumResponse>(HttpStatus.INTERNAL_SERVER_ERROR);

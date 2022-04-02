@@ -53,7 +53,7 @@ public class RegulationsApiController implements RegulationsApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<RegulationsResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"5614\",\n  \"RegulationsInfo\" : [ {\n    \"Exchange\" : 1,\n    \"Product\" : 8,\n    \"Side\" : \"2\",\n    \"Reason\" : \"品受停止（貸借申込停止銘柄（日証金規制））\",\n    \"LimitStartDay\" : \"2020/10/01 00:00\",\n    \"LimitEndDay\" : \"2999/12/31 00:00\",\n    \"Level\" : 2\n  }, {\n    \"Exchange\" : 0,\n    \"Product\" : 1,\n    \"Side\" : \"2\",\n    \"Reason\" : \"その他（代用不適格銘柄）\",\n    \"LimitStartDay\" : \"2021/01/27 00:00\",\n    \"LimitEndDay\" : \"2021/02/17 00:00\",\n    \"Level\" : 2\n  } ]\n}", RegulationsResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<RegulationsResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"5614\",\n  \"RegulationsInfo\" : [ {\n    \"Exchange\" : 1,\n    \"Product\" : 8,\n    \"Side\" : \"2\",\n    \"Reason\" : \"品受停止（貸借申込停止銘柄（日証金規制））\",\n    \"LimitStartDay\" : \"2020/10/01 00:00\",\n    \"LimitEndDay\" : \"2999/12/31 00:00\",\n    \"Level\" : 2\n  }, {\n    \"Exchange\" : 0,\n    \"Product\" : 1,\n    \"Side\" : \"2\",\n    \"Reason\" : \"その他（代用不適格銘柄）\",\n    \"LimitStartDay\" : \"2021/01/27 00:00\",\n    \"LimitEndDay\" : \"2021/02/17 00:00\",\n    \"Level\" : 2\n  } ]\n}", RegulationsResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<RegulationsResponse>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -54,7 +54,7 @@ public class ExchangeApiController implements ExchangeApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<ExchangeResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"USD/JPY\",\n  \"BidPrice\" : 105.502,\n  \"Spread\" : 0.2,\n  \"AskPrice\" : 105.504,\n  \"Change\" : -0.055,\n  \"Time\" : \"16:10:45\"\n}", ExchangeResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<ExchangeResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"USD/JPY\",\n  \"BidPrice\" : 105.502,\n  \"Spread\" : 0.2,\n  \"AskPrice\" : 105.504,\n  \"Change\" : -0.055,\n  \"Time\" : \"16:10:45\"\n}", ExchangeResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<ExchangeResponse>(HttpStatus.INTERNAL_SERVER_ERROR);

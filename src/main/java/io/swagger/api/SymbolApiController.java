@@ -53,7 +53,7 @@ public class SymbolApiController implements SymbolApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<SymbolSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"166090018\",\n  \"SymbolName\" : \"日経平均先物 21/09\",\n  \"DisplayName\" : \"日経平均先物 09\",\n  \"Exchange\" : 23,\n  \"ExchangeName\" : \"大阪日中\",\n  \"TradingUnit\" : 1,\n  \"PriceRangeGroup\" : \"10118\",\n  \"UpperLimit\" : 29870,\n  \"LowerLimit\" : 25290,\n  \"Underlyer\" : \"NK225\",\n  \"DerivMonth\" : \"2021/09\",\n  \"TradeEnd\" : 20210909,\n  \"TradeStart\" : 20200313\n}", SymbolSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<SymbolSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"166090018\",\n  \"SymbolName\" : \"日経平均先物 21/09\",\n  \"DisplayName\" : \"日経平均先物 09\",\n  \"Exchange\" : 23,\n  \"ExchangeName\" : \"大阪日中\",\n  \"TradingUnit\" : 1,\n  \"PriceRangeGroup\" : \"10118\",\n  \"UpperLimit\" : 29870,\n  \"LowerLimit\" : 25290,\n  \"Underlyer\" : \"NK225\",\n  \"DerivMonth\" : \"2021/09\",\n  \"TradeEnd\" : 20210909,\n  \"TradeStart\" : 20200313\n}", SymbolSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<SymbolSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);

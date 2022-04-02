@@ -56,7 +56,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletCashSuccess>(objectMapper.readValue("{\n  \"StockAccountWallet\" : 0.8008281904610115\n}", WalletCashSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletCashSuccess>(objectMapper.readValue("{\n  \"StockAccountWallet\" : 0.8008281904610115\n}", WalletCashSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletCashSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -70,7 +70,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletCashSuccess>(objectMapper.readValue("{\n  \"StockAccountWallet\" : 0.8008281904610115\n}", WalletCashSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletCashSuccess>(objectMapper.readValue("{\n  \"StockAccountWallet\" : 0.8008281904610115\n}", WalletCashSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletCashSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -84,7 +84,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletFutureSuccess>(objectMapper.readValue("{\n  \"FutureTradeLimit\" : 0.8008281904610115,\n  \"MarginRequirement\" : 6.027456183070403\n}", WalletFutureSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletFutureSuccess>(objectMapper.readValue("{\n  \"FutureTradeLimit\" : 0.8008281904610115,\n  \"MarginRequirement\" : 6.027456183070403\n}", WalletFutureSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletFutureSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -98,7 +98,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletFutureSuccess>(objectMapper.readValue("{\n  \"FutureTradeLimit\" : 0.8008281904610115,\n  \"MarginRequirement\" : 6.027456183070403\n}", WalletFutureSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletFutureSuccess>(objectMapper.readValue("{\n  \"FutureTradeLimit\" : 0.8008281904610115,\n  \"MarginRequirement\" : 6.027456183070403\n}", WalletFutureSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletFutureSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -112,7 +112,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletMarginSuccess>(objectMapper.readValue("{\n  \"ConsignmentDepositRate\" : 1.4658129805029452,\n  \"CashOfConsignmentDepositRate\" : 5.962133916683182,\n  \"MarginAccountWallet\" : 0.8008281904610115,\n  \"DepositkeepRate\" : 6.027456183070403\n}", WalletMarginSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletMarginSuccess>(objectMapper.readValue("{\n  \"ConsignmentDepositRate\" : 1.4658129805029452,\n  \"CashOfConsignmentDepositRate\" : 5.962133916683182,\n  \"MarginAccountWallet\" : 0.8008281904610115,\n  \"DepositkeepRate\" : 6.027456183070403\n}", WalletMarginSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletMarginSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -126,7 +126,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletMarginSuccess>(objectMapper.readValue("{\n  \"ConsignmentDepositRate\" : 1.4658129805029452,\n  \"CashOfConsignmentDepositRate\" : 5.962133916683182,\n  \"MarginAccountWallet\" : 0.8008281904610115,\n  \"DepositkeepRate\" : 6.027456183070403\n}", WalletMarginSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletMarginSuccess>(objectMapper.readValue("{\n  \"ConsignmentDepositRate\" : 1.4658129805029452,\n  \"CashOfConsignmentDepositRate\" : 5.962133916683182,\n  \"MarginAccountWallet\" : 0.8008281904610115,\n  \"DepositkeepRate\" : 6.027456183070403\n}", WalletMarginSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletMarginSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -140,7 +140,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletOptionSuccess>(objectMapper.readValue("{\n  \"OptionSellTradeLimit\" : 6.027456183070403,\n  \"MarginRequirement\" : 1.4658129805029452,\n  \"OptionBuyTradeLimit\" : 0.8008281904610115\n}", WalletOptionSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletOptionSuccess>(objectMapper.readValue("{\n  \"OptionSellTradeLimit\" : 6.027456183070403,\n  \"MarginRequirement\" : 1.4658129805029452,\n  \"OptionBuyTradeLimit\" : 0.8008281904610115\n}", WalletOptionSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletOptionSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -154,7 +154,7 @@ public class WalletApiController implements WalletApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<WalletOptionSuccess>(objectMapper.readValue("{\n  \"OptionSellTradeLimit\" : 6.027456183070403,\n  \"MarginRequirement\" : 1.4658129805029452,\n  \"OptionBuyTradeLimit\" : 0.8008281904610115\n}", WalletOptionSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<WalletOptionSuccess>(objectMapper.readValue("{\n  \"OptionSellTradeLimit\" : 6.027456183070403,\n  \"MarginRequirement\" : 1.4658129805029452,\n  \"OptionBuyTradeLimit\" : 0.8008281904610115\n}", WalletOptionSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<WalletOptionSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);

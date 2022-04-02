@@ -53,7 +53,7 @@ public class SymbolnameApiController implements SymbolnameApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<SymbolNameSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"136091318\",\n  \"SymbolName\" : \"日経平均オプション 21/09 プット 31375\"\n}", SymbolNameSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<SymbolNameSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"136091318\",\n  \"SymbolName\" : \"日経平均オプション 21/09 プット 31375\"\n}", SymbolNameSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<SymbolNameSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -67,7 +67,7 @@ public class SymbolnameApiController implements SymbolnameApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<SymbolNameSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"136091318\",\n  \"SymbolName\" : \"日経平均オプション 21/09 プット 31375\"\n}", SymbolNameSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<SymbolNameSuccess>(objectMapper.readValue("{\n  \"Symbol\" : \"136091318\",\n  \"SymbolName\" : \"日経平均オプション 21/09 プット 31375\"\n}", SymbolNameSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<SymbolNameSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -56,7 +56,7 @@ public class SendorderApiController implements SendorderApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<OrderSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -70,7 +70,7 @@ public class SendorderApiController implements SendorderApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<OrderSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -84,7 +84,7 @@ public class SendorderApiController implements SendorderApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<OrderSuccess>(objectMapper.readValue("{\n  \"OrderId\" : \"20200529A01N06848002\",\n  \"Result\" : 0\n}", OrderSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<OrderSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);

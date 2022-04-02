@@ -53,7 +53,7 @@ public class PrimaryexchangeApiController implements PrimaryexchangeApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<PrimaryExchangeResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"2928\",\n  \"Exchange\" : 6\n}", PrimaryExchangeResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<PrimaryExchangeResponse>(objectMapper.readValue("{\n  \"Symbol\" : \"2928\",\n  \"Exchange\" : 6\n}", PrimaryExchangeResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<PrimaryExchangeResponse>(HttpStatus.INTERNAL_SERVER_ERROR);

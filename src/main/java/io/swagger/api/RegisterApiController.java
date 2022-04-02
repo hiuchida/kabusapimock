@@ -54,7 +54,7 @@ public class RegisterApiController implements RegisterApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<RegistSuccess>(objectMapper.readValue("{\n  \"RegistList\" : [ {\n    \"Exchange\" : 1,\n    \"Symbol\" : \"9433\"\n  }, {\n    \"Exchange\" : 1,\n    \"Symbol\" : \"9433\"\n  } ]\n}", RegistSuccess.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<RegistSuccess>(objectMapper.readValue("{\n  \"RegistList\" : [ {\n    \"Exchange\" : 1,\n    \"Symbol\" : \"9433\"\n  }, {\n    \"Exchange\" : 1,\n    \"Symbol\" : \"9433\"\n  } ]\n}", RegistSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<RegistSuccess>(HttpStatus.INTERNAL_SERVER_ERROR);
