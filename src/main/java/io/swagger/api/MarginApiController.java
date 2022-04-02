@@ -49,7 +49,7 @@ public class MarginApiController implements MarginApi {
         this.request = request;
     }
 
-    public ResponseEntity<MarginPremiumResponse> marginpremiumGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY,@Parameter(in = ParameterIn.PATH, description = "銘柄コード", required=true, schema=@Schema()) @PathVariable("Symbol") String symbol) {
+    public ResponseEntity<MarginPremiumResponse> marginpremiumGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY,@Parameter(in = ParameterIn.PATH, description = "銘柄コード", required=true, schema=@Schema()) @PathVariable("symbol") String symbol) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
