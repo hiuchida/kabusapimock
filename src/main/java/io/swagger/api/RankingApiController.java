@@ -2,6 +2,8 @@ package io.swagger.api;
 
 import io.swagger.model.ErrorResponse;
 import io.swagger.model.InlineResponse200;
+import io.swagger.model.RankingDefaultResponse;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -49,20 +51,20 @@ public class RankingApiController implements RankingApi {
         this.request = request;
     }
 
-    public ResponseEntity<InlineResponse200> rankingGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY,@NotNull @Parameter(in = ParameterIn.QUERY, description = "種別<br> ※信用情報ランキングに「福証」「札証」を指定した場合は、空レスポンスになります <table>   <thead>       <tr>           <th>定義値</th>           <th>説明</th>       </tr>   </thead>   <tbody>       <tr>           <td>1</td>           <td>値上がり率（デフォルト）</td>       </tr>       <tr>           <td>2</td>           <td>値下がり率</td>       </tr>       <tr>           <td>3</td>           <td>売買高上位</td>       </tr>       <tr>           <td>4</td>           <td>売買代金</td>       </tr>       <tr>           <td>5</td>           <td>TICK回数</td>       </tr>       <tr>           <td>6</td>           <td>売買高急増</td>       </tr>       <tr>           <td>7</td>           <td>売買代金急増</td>       </tr>       <tr>           <td>8</td>           <td>信用売残増</td>       </tr>       <tr>           <td>9</td>           <td>信用売残減</td>       </tr>       <tr>           <td>10</td>           <td>信用買残増</td>       </tr>       <tr>           <td>11</td>           <td>信用買残減</td>       </tr>       <tr>           <td>12</td>           <td>信用高倍率</td>       </tr>       <tr>           <td>13</td>           <td>信用低倍率</td>       </tr>       <tr>           <td>14</td>           <td>業種別値上がり率</td>       </tr>       <tr>           <td>15</td>           <td>業種別値下がり率</td>       </tr>   </tbody> </table>" ,required=true,schema=@Schema(allowableValues={ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" }
+    public ResponseEntity<RankingDefaultResponse /*InlineResponse200*/> rankingGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY,@NotNull @Parameter(in = ParameterIn.QUERY, description = "種別<br> ※信用情報ランキングに「福証」「札証」を指定した場合は、空レスポンスになります <table>   <thead>       <tr>           <th>定義値</th>           <th>説明</th>       </tr>   </thead>   <tbody>       <tr>           <td>1</td>           <td>値上がり率（デフォルト）</td>       </tr>       <tr>           <td>2</td>           <td>値下がり率</td>       </tr>       <tr>           <td>3</td>           <td>売買高上位</td>       </tr>       <tr>           <td>4</td>           <td>売買代金</td>       </tr>       <tr>           <td>5</td>           <td>TICK回数</td>       </tr>       <tr>           <td>6</td>           <td>売買高急増</td>       </tr>       <tr>           <td>7</td>           <td>売買代金急増</td>       </tr>       <tr>           <td>8</td>           <td>信用売残増</td>       </tr>       <tr>           <td>9</td>           <td>信用売残減</td>       </tr>       <tr>           <td>10</td>           <td>信用買残増</td>       </tr>       <tr>           <td>11</td>           <td>信用買残減</td>       </tr>       <tr>           <td>12</td>           <td>信用高倍率</td>       </tr>       <tr>           <td>13</td>           <td>信用低倍率</td>       </tr>       <tr>           <td>14</td>           <td>業種別値上がり率</td>       </tr>       <tr>           <td>15</td>           <td>業種別値下がり率</td>       </tr>   </tbody> </table>" ,required=true,schema=@Schema(allowableValues={ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" }
 )) @Valid @RequestParam(value = "Type", required = true) String type,@NotNull @Parameter(in = ParameterIn.QUERY, description = "市場<br> ※業種別値上がり率・値下がり率に市場を指定しても無視されます <table>   <thead>       <tr>           <th>定義値</th>           <th>説明</th>       </tr>   </thead>   <tbody>       <tr>           <td>ALL</td>           <td>全市場（デフォルト）</td>       </tr>       <tr>           <td>T</td>           <td>東証全体</td>       </tr>       <tr>           <td>T1</td>           <td>東証一部</td>       </tr>       <tr>           <td>T2</td>           <td>東証二部</td>       </tr>       <tr>           <td>TM</td>           <td>マザーズ</td>       </tr>       <tr>           <td>JQ</td>           <td>JASDAQ</td>       </tr>       <tr>           <td>M</td>           <td>名証</td>       </tr>       <tr>           <td>FK</td>           <td>福証</td>       </tr>       <tr>           <td>S</td>           <td>札証</td>       </tr>   </tbody> </table>" ,required=true,schema=@Schema(allowableValues={ "ALL", "T", "T1", "T2", "TM", "JQ", "M", "FK", "S" }
 )) @Valid @RequestParam(value = "ExchangeDivision", required = true) String exchangeDivision) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<InlineResponse200>(objectMapper.readValue("\"\"", InlineResponse200.class), HttpStatus.OK);
+                return new ResponseEntity<RankingDefaultResponse /*InlineResponse200*/>(objectMapper.readValue("{\"Type\":\"1\",\"ExchangeDivision\":\"ALL\",\"Ranking\":[{\"No\":1,\"Trend\":\"1\",\"AverageRanking\":999.0,\"Symbol\":\"2975\",\"SymbolName\":\"スターマイカ\",\"CurrentPrice\":1622.0000,\"ChangeRatio\":300.00000,\"ChangePercentage\":22.69,\"CurrentPriceTime\":\"15:00\",\"TradingVolume\":238.8000,\"Turnover\":387.1996,\"ExchangeName\":\"東証プ\",\"CategoryName\":\"不動産業\"},{\"No\":2,\"Trend\":\"1\",\"AverageRanking\":999.0,\"Symbol\":\"6513\",\"SymbolName\":\"オリジン\",\"CurrentPrice\":1467.0000,\"ChangeRatio\":250.00000,\"ChangePercentage\":20.54,\"CurrentPriceTime\":\"15:00\",\"TradingVolume\":344.0000,\"Turnover\":516.4782,\"ExchangeName\":\"東証ス\",\"CategoryName\":\"電気機器\"}]}", RankingDefaultResponse /*InlineResponse200*/.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<InlineResponse200>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<RankingDefaultResponse /*InlineResponse200*/>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<InlineResponse200>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<RankingDefaultResponse /*InlineResponse200*/>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }
