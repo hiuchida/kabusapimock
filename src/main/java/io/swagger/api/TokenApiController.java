@@ -50,10 +50,13 @@ public class TokenApiController implements TokenApi {
         this.request = request;
     }
 
-    public ResponseEntity<TokenSuccess> tokenPost(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody RequestToken body) {
+    public ResponseEntity<?> tokenPost(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody RequestToken body) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
+            	if (body.getApIPassword().length() == 0) {
+            		return new ResponseEntity<ErrorResponse>(objectMapper.readValue("{\"Code\":4001013,\"Message\":\"トークン取得失敗\"}", ErrorResponse.class), HttpStatus.UNAUTHORIZED);
+            	}
                 return new ResponseEntity<TokenSuccess>(objectMapper.readValue("{\n  \"Token\" : \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n  \"ResultCode\" : 0\n}", TokenSuccess.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
