@@ -33,7 +33,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-04-02T09:52:30.553Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-04-09T08:08:07.124Z[GMT]")
 @RestController
 public class PositionsApiController implements PositionsApi {
 
@@ -55,7 +55,7 @@ public class PositionsApiController implements PositionsApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<List<PositionsSuccess>>(objectMapper.readValue("[ {\n  \"ExecutionID\" : \"20200715E02N04738464\",\n  \"AccountType\" : 4,\n  \"Symbol\" : 8306,\n  \"SymbolName\" : \"三菱ＵＦＪフィナンシャル・グループ\",\n  \"Exchange\" : 1,\n  \"ExchangeName\" : \"東証１部\",\n  \"ExecutionDay\" : 20200702,\n  \"Price\" : 704,\n  \"LeavesQty\" : 500,\n  \"HoldQty\" : 0,\n  \"Side\" : \"1\",\n  \"Expenses\" : 0,\n  \"Commission\" : 1620,\n  \"CommissionTax\" : 162,\n  \"ExpireDay\" : 20201229,\n  \"MarginTradeType\" : 1,\n  \"CurrentPrice\" : 414.5,\n  \"Valuation\" : 207250,\n  \"ProfitLoss\" : 144750,\n  \"ProfitLossRate\" : 41.12215909090909\n}, {\n  \"ExecutionID\" : \"20200715E02N04738464\",\n  \"AccountType\" : 4,\n  \"Symbol\" : 8306,\n  \"SymbolName\" : \"三菱ＵＦＪフィナンシャル・グループ\",\n  \"Exchange\" : 1,\n  \"ExchangeName\" : \"東証１部\",\n  \"ExecutionDay\" : 20200702,\n  \"Price\" : 704,\n  \"LeavesQty\" : 500,\n  \"HoldQty\" : 0,\n  \"Side\" : \"1\",\n  \"Expenses\" : 0,\n  \"Commission\" : 1620,\n  \"CommissionTax\" : 162,\n  \"ExpireDay\" : 20201229,\n  \"MarginTradeType\" : 1,\n  \"CurrentPrice\" : 414.5,\n  \"Valuation\" : 207250,\n  \"ProfitLoss\" : 144750,\n  \"ProfitLossRate\" : 41.12215909090909\n} ]", List.class), HttpStatus.OK);
+                return new ResponseEntity<List<PositionsSuccess>>(objectMapper.readValue("[ {\n  \"ExecutionID\" : \"20220404E02N04738464\",\n  \"AccountType\" : 4,\n  \"Symbol\" : \"8306\",\n  \"SymbolName\" : \"三菱ＵＦＪフィナンシャル・グループ\",\n  \"Exchange\" : 1,\n  \"ExchangeName\" : \"東証プ\",\n  \"ExecutionDay\" : 20220404,\n  \"Price\" : 704,\n  \"LeavesQty\" : 500,\n  \"HoldQty\" : 0,\n  \"Side\" : \"1\",\n  \"Expenses\" : 0,\n  \"Commission\" : 1620,\n  \"CommissionTax\" : 162,\n  \"ExpireDay\" : 20220404,\n  \"MarginTradeType\" : 1,\n  \"CurrentPrice\" : 414.5,\n  \"Valuation\" : 207250,\n  \"ProfitLoss\" : 144750,\n  \"ProfitLossRate\" : 41.12215909090909\n}, {\n  \"ExecutionID\" : \"20220404E02N04738464\",\n  \"AccountType\" : 4,\n  \"Symbol\" : \"8306\",\n  \"SymbolName\" : \"三菱ＵＦＪフィナンシャル・グループ\",\n  \"Exchange\" : 1,\n  \"ExchangeName\" : \"東証プ\",\n  \"ExecutionDay\" : 20220404,\n  \"Price\" : 704,\n  \"LeavesQty\" : 500,\n  \"HoldQty\" : 0,\n  \"Side\" : \"1\",\n  \"Expenses\" : 0,\n  \"Commission\" : 1620,\n  \"CommissionTax\" : 162,\n  \"ExpireDay\" : 20220404,\n  \"MarginTradeType\" : 1,\n  \"CurrentPrice\" : 414.5,\n  \"Valuation\" : 207250,\n  \"ProfitLoss\" : 144750,\n  \"ProfitLossRate\" : 41.12215909090909\n} ]", List.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<List<PositionsSuccess>>(HttpStatus.INTERNAL_SERVER_ERROR);
